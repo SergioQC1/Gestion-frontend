@@ -1,0 +1,22 @@
+.titulo-dialogo {
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: bold; /* Aumenta el grosor de la letra */
+  margin-bottom: 5px; /* Espacio debajo del título */
+  color: #3f51b5; /* Color azul, acorde al diseño Material */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  max-height: 80vh;
+}
+
+button {
+  margin-right: 10px;
+}

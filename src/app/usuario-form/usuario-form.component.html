@@ -1,0 +1,43 @@
+<h2 mat-dialog-title class="titulo-dialogo">{{ data ? 'Editar Usuario' : 'Agregar Usuario' }}</h2>
+<form [formGroup]="usuarioForm" (ngSubmit)="guardarUsuario()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="apellido" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Correo</mat-label>
+    <input matInput formControlName="correo" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="telefono" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" formControlName="contraseña" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rol</mat-label>
+    <mat-select formControlName="rol" required>
+      <mat-option *ngFor="let rol of roles" [value]="rol.idRol">
+        {{ rol.nombre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <!-- Ingresar un nuevo rol -->
+    <button mat-raised-button color="primary" (click)="abrirFormularioRol()">Agregar Nuevo Rol</button> <!-- Botón para agregar un nuevo rol -->
+    <button mat-button (click)="onCancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+  </div>
+</form>

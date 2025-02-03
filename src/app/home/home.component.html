@@ -1,0 +1,55 @@
+<div class="page-container">
+  <!--Header -->
+  <header class="header">
+    <h1>Bienvenido, {{ user.nombre }} {{ user.apellido }}</h1>
+    <button mat-button color="warn" (click)="logout()">Cerrar Sesión</button>
+  </header>
+
+  <!-- Contenedor principal con barra lateral y módulos -->
+  <div class="main-content">
+    <!-- Barra lateral con la información del usuario -->
+    <aside class="sidebar">
+      <h2>Información del Usuario</h2>
+      <mat-divider></mat-divider>
+      <p><strong>Nombre:</strong> {{ user.nombre }} {{ user.apellido }}</p>
+      <p><strong>Correo:</strong> {{ user.correo }}</p>
+      <p><strong>Rol:</strong> {{ user.rol }}</p>
+    </aside>
+
+    <!-- Sección de los módulos disponibles -->
+    <section class="modules-section">
+      <h2>Módulos Disponibles</h2>
+      <div class="module-cards">
+        <div *ngFor="let module of modules" class="module-card">
+          <h3>{{ module }}</h3>
+          <div class="icon">
+            <mat-icon>{{ getIconForModule(module) }}</mat-icon>
+          </div>
+
+          <!-- Menú expandible con hover solo para Ajustes -->
+          <ul class="menu-options" *ngIf="module === 'Ajustes'">
+            <li><a (click)="navigateTo('/usuarios')">Usuarios</a></li>
+            <mat-divider class="div-ajustes"></mat-divider>
+            <li><a (click)="navigateTo('admin/informacion')">Información</a></li>
+          </ul>
+
+          <!-- Menú desplegable -->
+          <!--<button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="navigateToOption(module, 'opcion1')">Opción 1</button>
+            <button mat-menu-item (click)="navigateToOption(module, 'opcion2')">Opción 2</button>
+            <button mat-menu-item (click)="navigateToOption(module, 'opcion3')">Opción 3</button>
+          </mat-menu>-->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 - Sistema de Gestión. Todos los derechos reservados.</p>
+  </footer>
+</div>

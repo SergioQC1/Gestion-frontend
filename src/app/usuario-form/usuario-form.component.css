@@ -1,0 +1,44 @@
+.titulo-dialogo {
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: bold; /* Aumenta el grosor de la letra */
+  margin-bottom: 5px; /* Espacio debajo del título */
+  color: #3f51b5; /* Color azul, acorde al diseño Material */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  max-height: 80vh;
+}
+
+mat-form-field {
+  width: 95%;
+}
+
+button {
+  width: 95%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #303f9f;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between; /* Distribuye los botones en los extremos */
+  padding: 5px 0; /* Añade espacio superior e inferior */
+  gap: 10px; /* Espacio entre botones */
+  margin-top: 5px; /* Reduce el espacio entre el formulario y los botones */
+}
+
+mat-dialog-actions button {
+  flex: 1; /* Cada botón ocupará el mismo espacio */
+  margin: 0 5px; /* Espacio entre botones */
+}
